@@ -109,3 +109,8 @@
     @apply font-display uppercase tracking-tight leading-none;
   }
 }
+
+/* Hide Lovable platform badge when injected into the page (preview / published) */
+#lovable-badge {
+  display: none !important;
+}
