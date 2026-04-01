@@ -5,6 +5,7 @@ const footerLinks = [
   { label: "Training", to: "/training" },
   { label: "Success Stories", to: "/success-stories" },
   { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
   { label: "Join SWAG", to: "/join" },
 ];
 
