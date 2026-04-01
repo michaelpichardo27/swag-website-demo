@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, Target, Users, Award, Shield, Lightbulb } from "lucide-react";
+import { Heart, Target, Shield, Lightbulb, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import PageCTA from "@/components/PageCTA";
@@ -12,12 +13,54 @@ const values = [
   { icon: Lightbulb, title: "Growth", description: "We believe in continuous improvement and developing the whole person, not just the athlete." },
 ];
 
-const team = [
-  { name: "Coach Michael Davis", role: "Founder & Head of Training", bio: "Former D1 athlete with 15+ years of coaching experience. Michael founded SWAG to give student-athletes the guidance and support he wished he had growing up." },
-  { name: "Sarah Johnson", role: "Academic Director", bio: "Education specialist with a master's in counseling. Sarah oversees all academic programs and ensures every athlete stays on track for eligibility and college admissions." },
-  { name: "James Wright", role: "Recruiting Coordinator", bio: "Former college assistant coach with connections to 50+ college programs nationwide. James manages all recruiting outreach, highlight films, and showcase events." },
-  { name: "Dr. Lisa Chen", role: "Sports Performance Director", bio: "Ph.D. in Exercise Science with expertise in youth athlete development. Lisa designs all training programs using the latest sports science research." },
+const founders = [
+  {
+    name: "DeVon Hilliard",
+    role: "Co-Founder",
+    initials: "DH",
+    imageSrc: "/team/devon-hilliard.jpg",
+    bio: "Mr. Hilliard graduated from Atwater High School in 1998. He accepted a partial athletic scholarship to UC Davis. Due to an unforeseen injury, Mr. Hilliard came back to Atwater and attended Merced JC. In 2000, after receiving an AA degree, he joined the United States Air Force. Mr. Hilliard finished his enlistment in 2004 and at that time he received his Criminal Justice Bachelors degree. In 2005 Mr. Hilliard began working with the California Department of Corrections. In 2008, Mr. Hilliard received his Masters Degree in Criminal Justice Administration.",
+    email: "dhilliard.swag@gmail.com",
+  },
+  {
+    name: "Brett Nickelson",
+    role: "Co-Founder",
+    initials: "BN",
+    imageSrc: "/team/brett-nickelson.jpg",
+    bio: "Mr. Nickelson graduated from Atwater High School in 1998. Following high school, Mr. Nickelson accepted an academic scholarship to the University of Washington where he earned his Bachelor’s degree in Social Science. He has been a teacher in the Merced Union High School District since 2003 and has recently completed his Master’s degree in Education and earned an Administrative Services Credential. Mr. Nickelson has recently accepted a position as an Associate Principal at Delhi High School.",
+    email: "nickelson.brett@gmail.com",
+  },
+  {
+    name: "Eddie Frazier",
+    role: "Co-Founder · Student-athlete recruiting",
+    initials: "EF",
+    imageSrc: "/team/eddie-frazier.jpg",
+    bio: "Graduated from Atwater High in 1996. Mr. Frazier signed a Scholarship to University of Nevada Reno for Football. Transferred to Merced College and played football for a semester. Then transferred to Delta Junior College and played Basketball from 1997-1999. Mr. Frazier signed a Basketball Scholarship to attend Holy Names University and played there from 1999-2002. He then played for 2 ½ years in Berlin Germany. Mr. Frazier now works for Merced County Human Services agency. Mr. Frazier is in charge of all of the recruiting for SWAG's student athletes.",
+    email: "edfraz04@gmail.com",
+  },
 ];
+
+function FounderAvatar({ src, alt, initials }: { src: string; alt: string; initials: string }) {
+  const [useFallback, setUseFallback] = useState(false);
+  if (useFallback) {
+    return (
+      <div
+        className="aspect-square w-full max-w-[200px] shrink-0 rounded-lg bg-primary/15 flex items-center justify-center heading-display text-3xl text-primary border border-border"
+        aria-hidden
+      >
+        {initials}
+      </div>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="aspect-square w-full max-w-[200px] shrink-0 rounded-lg object-cover border border-border bg-secondary"
+      onError={() => setUseFallback(true)}
+    />
+  );
+}
 
 const About = () => {
   return (
@@ -26,31 +69,22 @@ const About = () => {
       <PageHero
         tag="About SWAG"
         title="Built for the Next Generation"
-        description="SWAG was founded with one mission: to give student-athletes the tools, training, and guidance they need to earn opportunities in college athletics."
+        description="Based out of Merced, CA. Serving the Central Valley. SWAG supports high school students transitioning to college through academic mentoring and athletic training."
       />
 
       {/* Mission */}
       <section className="section-padding bg-background">
         <div className="max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <p className="text-primary font-display uppercase tracking-[0.2em] text-sm mb-3">Our Mission</p>
             <h2 className="heading-display text-3xl md:text-5xl text-foreground mb-6">Why SWAG Exists</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-              Too many talented athletes never reach their potential without structured training and mentorship. SWAG bridges that gap — with a focused program that builds strength, speed, and confidence for competition at every level.
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-4">
+              Based out of Merced, CA. Serving the Central Valley.
+            </p>
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+              SWAG exists to support high school students transitioning to college. Whether it&apos;s through academic mentoring or athletic training, our knowledgeable staff knows how to navigate that transition and is available to assist both parents and students.
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            {[
-              { value: "2018", label: "Year Founded" },
-              { value: "500+", label: "Athletes Served" },
-              { value: "50+", label: "College Placements" },
-            ].map((stat, i) => (
-              <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-secondary rounded-lg p-8">
-                <div className="heading-display text-3xl md:text-4xl text-primary mb-2">{stat.value}</div>
-                <p className="text-muted-foreground text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -80,18 +114,34 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <p className="text-primary font-display uppercase tracking-[0.2em] text-sm mb-3">Leadership</p>
-            <h2 className="heading-display text-3xl md:text-5xl text-foreground">Meet the Team</h2>
+            <h2 className="heading-display text-3xl md:text-5xl text-foreground">Meet the Founders</h2>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {team.map((t, i) => (
-              <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-card rounded-lg border border-border p-6 shadow-card">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Users className="w-7 h-7 text-primary" />
+          <div className="flex flex-col gap-10">
+            {founders.map((f, i) => (
+              <motion.article
+                key={f.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-card rounded-lg border border-border p-6 md:p-8 shadow-card"
+              >
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                  <FounderAvatar src={f.imageSrc} alt={`${f.name}`} initials={f.initials} />
+                  <div className="min-w-0 flex-1 text-center md:text-left">
+                    <h3 className="heading-display text-xl text-foreground">{f.name}</h3>
+                    <p className="text-primary text-sm font-medium mb-4">{f.role}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{f.bio}</p>
+                    <a
+                      href={`mailto:${f.email}`}
+                      className="inline-flex items-center justify-center md:justify-start gap-2 text-sm font-medium text-primary hover:underline"
+                    >
+                      <Mail className="w-4 h-4 shrink-0" aria-hidden />
+                      {f.email}
+                    </a>
+                  </div>
                 </div>
-                <h3 className="heading-display text-lg text-foreground">{t.name}</h3>
-                <p className="text-primary text-sm font-medium mb-3">{t.role}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.bio}</p>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
@@ -122,7 +172,7 @@ const About = () => {
         </div>
       </section>
 
-      <PageCTA headline="Join the SWAG Family" description="Become part of a community that's changing the game for student-athletes across Georgia and beyond." />
+      <PageCTA headline="Join the SWAG Family" description="Become part of a community that's changing the game for student-athletes across the Central Valley and beyond." />
       <Footer />
     </div>
   );
