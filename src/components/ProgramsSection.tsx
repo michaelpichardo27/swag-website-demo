@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Dumbbell, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { JOIN_SWAG_URL, isExternalHref } from "@/lib/joinSwagUrl";
 
 const programs = [
   {
@@ -14,7 +15,7 @@ const programs = [
     icon: Users,
     title: "Join SWAG",
     description: "Take the next step with our team. Apply to train with SWAG and get a coordinator to walk you through options and scheduling.",
-    to: "/join",
+    to: JOIN_SWAG_URL,
   },
 ];
 
@@ -36,7 +37,13 @@ const ProgramsSection = () => {
               <h3 className="heading-display text-xl md:text-2xl text-foreground mb-3">{program.title}</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">{program.description}</p>
               <Button asChild variant="ghost" className="text-primary hover:text-green-glow font-medium px-0">
-                <Link to={program.to}>Learn More →</Link>
+                {isExternalHref(program.to) ? (
+                  <a href={program.to} target="_blank" rel="noopener noreferrer">
+                    Learn More →
+                  </a>
+                ) : (
+                  <Link to={program.to}>Learn More →</Link>
+                )}
               </Button>
             </motion.div>
           ))}

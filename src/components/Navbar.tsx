@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { JOIN_SWAG_URL } from "@/lib/joinSwagUrl";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -56,7 +57,9 @@ const Navbar = () => {
             </Link>
           ))}
           <Button asChild>
-            <Link to="/join">Join SWAG</Link>
+            <a href={JOIN_SWAG_URL} target="_blank" rel="noopener noreferrer">
+              Join SWAG
+            </a>
           </Button>
         </div>
 
@@ -87,7 +90,9 @@ const Navbar = () => {
             </Link>
           ))}
           <Button asChild className="w-full mt-4">
-            <Link to="/join">Join SWAG</Link>
+            <a href={JOIN_SWAG_URL} target="_blank" rel="noopener noreferrer">
+              Join SWAG
+            </a>
           </Button>
         </div>
       )}

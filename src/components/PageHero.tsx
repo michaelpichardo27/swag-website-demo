@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { isExternalHref } from "@/lib/joinSwagUrl";
 
 interface PageHeroProps {
   tag: string;
@@ -47,7 +48,13 @@ const PageHero = ({ tag, title, description, ctaLabel, ctaTo }: PageHeroProps) =
             className="mt-8"
           >
             <Button asChild size="lg" className="font-display uppercase tracking-wider px-8 py-6 text-base">
-              <Link to={ctaTo}>{ctaLabel}</Link>
+              {isExternalHref(ctaTo) ? (
+                <a href={ctaTo} target="_blank" rel="noopener noreferrer">
+                  {ctaLabel}
+                </a>
+              ) : (
+                <Link to={ctaTo}>{ctaLabel}</Link>
+              )}
             </Button>
           </motion.div>
         )}

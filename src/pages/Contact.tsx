@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, Twitter, Youtube, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +8,7 @@ import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
+import { JOIN_SWAG_URL } from "@/lib/joinSwagUrl";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -50,9 +50,9 @@ const Contact = () => {
               <h2 className="heading-display text-2xl mb-2">Send a message</h2>
               <p className="text-surface-dark-foreground/60 text-sm mb-6">
                 Prefer to apply for the program?{" "}
-                <Link to="/join" className="text-green-glow hover:underline">
+                <a href={JOIN_SWAG_URL} target="_blank" rel="noopener noreferrer" className="text-green-glow hover:underline">
                   Go to Join SWAG
-                </Link>
+                </a>
               </p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input placeholder="Your name *" value={form.name} onChange={update("name")} className={inputClass} />

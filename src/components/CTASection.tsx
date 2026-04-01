@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { JOIN_SWAG_URL } from "@/lib/joinSwagUrl";
 
 const CTASection = () => {
   return (
@@ -11,7 +11,9 @@ const CTASection = () => {
           <h2 className="heading-display text-3xl md:text-5xl mb-4">Start Your Journey Today</h2>
           <p className="text-surface-dark-foreground/60 mb-8">Ready to take the next step? Fill out our application and a SWAG coordinator will reach out within 24 hours.</p>
           <Button asChild size="lg" className="font-display uppercase tracking-wider px-10 py-6 text-base">
-            <Link to="/join">Apply Now</Link>
+            <a href={JOIN_SWAG_URL} target="_blank" rel="noopener noreferrer">
+              Apply Now
+            </a>
           </Button>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import PageCTA from "@/components/PageCTA";
 import Footer from "@/components/Footer";
+import { JOIN_SWAG_URL } from "@/lib/joinSwagUrl";
 
 const trainingTypes = [
   { icon: Zap, title: "Speed & Agility", description: "Cone drills, ladder work, sprint mechanics, and reaction training to make you faster and more explosive on the field." },
@@ -39,7 +40,7 @@ const Training = () => {
         title="Train Like an Elite Athlete"
         description="Our comprehensive training programs develop speed, strength, agility, and sport-specific skills to prepare you for competition at the next level."
         ctaLabel="Start Training"
-        ctaTo="/join"
+        ctaTo={JOIN_SWAG_URL}
       />
 
       {/* Philosophy */}

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { JOIN_SWAG_URL, isExternalHref } from "@/lib/joinSwagUrl";
 
 const footerLinks = [
   { label: "Training", to: "/training" },
   { label: "Success Stories", to: "/success-stories" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
-  { label: "Join SWAG", to: "/join" },
+  { label: "Join SWAG", to: JOIN_SWAG_URL },
 ];
 
 const Footer = () => {
@@ -25,8 +26,16 @@ const Footer = () => {
             <h4 className="font-display uppercase tracking-wider text-surface-dark-foreground text-sm mb-4">Pages</h4>
             <ul className="space-y-2 text-sm">
               {footerLinks.map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="hover:text-green-glow transition-colors">{l.label}</Link>
+                <li key={l.label}>
+                  {isExternalHref(l.to) ? (
+                    <a href={l.to} target="_blank" rel="noopener noreferrer" className="hover:text-green-glow transition-colors">
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link to={l.to} className="hover:text-green-glow transition-colors">
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

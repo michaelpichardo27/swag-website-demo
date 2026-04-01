@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
+import { JOIN_SWAG_URL } from "@/lib/joinSwagUrl";
 
 const HeroSection = () => {
   return (
@@ -23,7 +24,9 @@ const HeroSection = () => {
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="text-base px-8 py-6 font-display uppercase tracking-wider">
-            <Link to="/join">Join SWAG</Link>
+            <a href={JOIN_SWAG_URL} target="_blank" rel="noopener noreferrer">
+              Join SWAG
+            </a>
           </Button>
           <Button
             asChild
