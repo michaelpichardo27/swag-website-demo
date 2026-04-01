@@ -36,7 +36,7 @@ const About = () => {
             <p className="text-primary font-display uppercase tracking-[0.2em] text-sm mb-3">Our Mission</p>
             <h2 className="heading-display text-3xl md:text-5xl text-foreground mb-6">Why SWAG Exists</h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-              Too many talented athletes miss out on college opportunities because they lack access to quality training, academic support, and recruiting guidance. SWAG bridges that gap — providing a comprehensive development program that prepares student-athletes for success on the field, in the classroom, and beyond.
+              Too many talented athletes never reach their potential without structured training and mentorship. SWAG bridges that gap — with a focused program that builds strength, speed, and confidence for competition at every level.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 text-center">

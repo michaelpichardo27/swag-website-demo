@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Dumbbell, BookOpen, Trophy } from "lucide-react";
+import { Dumbbell, LineChart, Trophy } from "lucide-react";
 
 const steps = [
   {
@@ -9,16 +9,16 @@ const steps = [
     description: "Work with experienced trainers who develop speed, strength, agility, and sport-specific skills at the highest level.",
   },
   {
-    icon: BookOpen,
+    icon: LineChart,
     step: "02",
-    title: "Build Academic Eligibility",
-    description: "Our academic advisors ensure you meet NCAA/NAIA eligibility requirements and maintain the GPA colleges demand.",
+    title: "Measure & Improve",
+    description: "Regular performance testing and structured progressions so you see gains where they matter — on the field and in the weight room.",
   },
   {
     icon: Trophy,
     step: "03",
-    title: "Get Recruited to College",
-    description: "Gain exposure through showcases, highlight reels, and direct connections with college coaches nationwide.",
+    title: "Compete with Confidence",
+    description: "Build the physical and mental readiness to perform when it counts — from varsity competition to the next level.",
   },
 ];
 

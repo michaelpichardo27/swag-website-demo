@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Dumbbell, GraduationCap, Eye } from "lucide-react";
+import { Dumbbell, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -11,16 +11,10 @@ const programs = [
     to: "/training",
   },
   {
-    icon: GraduationCap,
-    title: "Academic Support",
-    description: "Tutoring, study skills workshops, and eligibility tracking to ensure student-athletes meet college admissions and NCAA academic standards.",
-    to: "/academics",
-  },
-  {
-    icon: Eye,
-    title: "Recruiting Exposure",
-    description: "Showcase events, film production, prospect profiles, and direct outreach to college coaches to maximize your recruiting opportunities.",
-    to: "/recruiting",
+    icon: Users,
+    title: "Join SWAG",
+    description: "Take the next step with our team. Apply to train with SWAG and get a coordinator to walk you through options and scheduling.",
+    to: "/join",
   },
 ];
 
@@ -33,7 +27,7 @@ const ProgramsSection = () => {
           <h2 className="heading-display text-3xl md:text-5xl text-foreground">Our Programs</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {programs.map((program, i) => (
             <motion.div key={program.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="bg-card rounded-lg border border-border p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group hover:-translate-y-1">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">

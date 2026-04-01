@@ -19,7 +19,7 @@ const HeroSection = () => {
           Helping Student-Athletes Get to the <span className="text-green-glow">Next Level</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="text-surface-dark-foreground/70 text-base md:text-xl max-w-2xl mx-auto mb-10 font-body leading-relaxed">
-          Elite training, academic support, and recruiting guidance for athletes ready to compete at the next level
+          Elite training and coaching for athletes ready to compete at the next level
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="text-base px-8 py-6 font-display uppercase tracking-wider">

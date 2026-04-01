@@ -3,8 +3,6 @@ import { Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = [
   { label: "Training", to: "/training" },
-  { label: "Academics", to: "/academics" },
-  { label: "Recruiting", to: "/recruiting" },
   { label: "Success Stories", to: "/success-stories" },
   { label: "About", to: "/about" },
   { label: "Join SWAG", to: "/join" },
@@ -18,7 +16,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <Link to="/" className="font-display text-2xl tracking-wider text-surface-dark-foreground font-bold">SWAG</Link>
             <p className="text-sm mt-4 leading-relaxed">
-              Developing the next generation of student-athletes through elite training, academic excellence, and college recruiting.
+              Developing the next generation of student-athletes through elite training and coaching.
             </p>
           </div>
 
