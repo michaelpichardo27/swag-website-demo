@@ -72,22 +72,6 @@ const About = () => {
         description="Based out of Merced, CA. Serving the Central Valley. SWAG supports high school students transitioning to college through academic mentoring and athletic training."
       />
 
-      {/* Mission */}
-      <section className="section-padding bg-background">
-        <div className="max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <p className="text-primary font-display uppercase tracking-[0.2em] text-sm mb-3">Our Mission</p>
-            <h2 className="heading-display text-3xl md:text-5xl text-foreground mb-6">Why SWAG Exists</h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-4">
-              Based out of Merced, CA. Serving the Central Valley.
-            </p>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-              SWAG exists to support high school students transitioning to college. Whether it&apos;s through academic mentoring or athletic training, our knowledgeable staff knows how to navigate that transition and is available to assist both parents and students.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Values */}
       <section className="section-padding bg-surface-dark text-surface-dark-foreground">
         <div className="max-w-6xl mx-auto">
