@@ -72,6 +72,31 @@ const About = () => {
         description="Based out of Merced, CA. Serving the Central Valley. SWAG supports high school students transitioning to college through academic mentoring and athletic training."
       />
 
+      {/* About SWAG — program overview (between hero and values) */}
+      <section className="section-padding bg-background">
+        <div className="max-w-3xl mx-auto px-5 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center md:text-left"
+          >
+            <h2 className="heading-display text-3xl md:text-5xl text-foreground mb-6">About SWAG</h2>
+            <div className="text-muted-foreground text-base md:text-lg leading-relaxed space-y-4">
+              <p>
+                SWAG provides the Central Valley&apos;s most well-rounded supplemental programs for student success. We combine sports training,
+                academic planning, and recruiting assistance to bridge the gap between students and universities.
+              </p>
+              <p>
+                When you sign up with SWAG, you&apos;re paired with an academic advisor to determine the steps needed to compete at the college
+                level. You&apos;ll also gain access to our elite training staff for personal and group training. Every student athlete that trains
+                with SWAG is given the tools to excel in competition and in the classroom.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="section-padding bg-surface-dark text-surface-dark-foreground">
         <div className="max-w-6xl mx-auto">
